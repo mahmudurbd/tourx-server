@@ -25,6 +25,7 @@ async function run() {
     const database = client.db("tourxDB");
     // create collection
     const packagesCollection = database.collection("tourPackages");
+    
 
     // Get api
     app.get('/tourpackages',async(req,res) => {
@@ -48,6 +49,7 @@ async function run() {
         const result = await packagesCollection.insertOne(addPackage);
         res.json(result);
     })
+
 
     // Delete api
     app.delete('/tourpackages/:id',async(req,res) => {
